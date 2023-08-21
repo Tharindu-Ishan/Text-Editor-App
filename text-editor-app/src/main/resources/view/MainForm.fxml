@@ -31,7 +31,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="User Guide" />
+              <MenuItem fx:id="btnUserGuide" mnemonicParsing="false" onAction="#btnUserGuideOnAction" text="User Guide" />
                   <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>

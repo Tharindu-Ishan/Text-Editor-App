@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="491.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.UserGuideController">
+   <children>
+      <VBox layoutX="10.0" layoutY="39.0" prefHeight="373.0" prefWidth="645.0" spacing="30.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox spacing="60.0">
+               <children>
+                  <ImageView fitHeight="69.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assert.image/user%20guide%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Basic Text Editor User Guide">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <TextArea editable="false" prefHeight="405.0" prefWidth="718.0" text="&#10;Welcome to the Basic Text Editor user guide. &#10;This concise guide will help you quickly get acquainted with our text editing application.&#10;&#10;Getting Started&#10;Installation: Download and run the installer from our website.&#10;Launching: Open the application from your desktop or Start menu.&#10;Text Editing&#10;Creating a New Document: Click &quot;File&quot; &gt; &quot;New.&quot;&#10;Opening an Existing Document: Click &quot;File&quot; &gt; &quot;Open&quot; and choose your file.&#10;Saving: Click &quot;File&quot; &gt; &quot;Save&quot; or &quot;Save As,&quot; select location and name, then click &quot;Save.&quot;&#10;Undo/Redo: Undo: Ctrl+Z (Windows), Cmd+Z (macOS), Redo: Ctrl+Y (Windows), Cmd+Shift+Z (macOS).&#10;Editing Tools&#10;Cut, Copy, Paste: Right-click or use Ctrl+X, Ctrl+C, Ctrl+V.&#10;Find and Replace: Click &quot;Edit&quot; &gt; &quot;Find&quot; or use Ctrl+F.&#10;Text Formatting: Highlight text and click formatting buttons in the toolbar.&#10;Customization&#10;Themes: Change the appearance in &quot;Settings&quot; &gt; &quot;Themes.&quot;&#10;Font and Size: Adjust text appearance from &quot;Settings&quot; &gt; &quot;Font.&quot;&#10;Tips&#10;Word Count: Track word count in the status bar.&#10;Spell Check: Use built-in spell check as you type.&#10;Line Numbers: Enable line numbers from &quot;Settings.&quot;&#10;FAQs&#10;Troubleshooting: Find solutions in the FAQ section.&#10;Support: Contact us for assistance.&#10;Enjoy seamless text editing with our Basic Text Editor!">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextArea>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

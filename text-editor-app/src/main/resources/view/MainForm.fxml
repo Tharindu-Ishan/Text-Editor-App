@@ -18,7 +18,7 @@
                   <MenuItem mnemonicParsing="false" text="Save" />
                   <MenuItem mnemonicParsing="false" text="Save As" />
                   <MenuItem mnemonicParsing="false" text="Print" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseOnAction" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">

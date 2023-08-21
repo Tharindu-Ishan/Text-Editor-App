@@ -8,8 +8,13 @@ public class MainFormController {
 
     public MenuItem btnNew;
     public HTMLEditor htmlEditor;
+    public MenuItem btnClose;
 
     public void btnNewOnAction(ActionEvent actionEvent) {
         htmlEditor.setHtmlText("");
+    }
+
+    public void btnCloseOnAction(ActionEvent actionEvent) {
+        System.exit(0);
     }
 }

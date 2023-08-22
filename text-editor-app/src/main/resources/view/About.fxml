@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="668.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.AboutController">
+<AnchorPane fx:id="root" onMouseClicked="#rootOnMouseClicked" onMouseDragged="#rootOnMouseDragged" onMouseMoved="#rootOnMouseMoved" prefHeight="668.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.AboutController">
    <children>
-      <ImageView fitHeight="568.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgRoot" fitHeight="568.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assert.image/onecolor.png" />
          </image>

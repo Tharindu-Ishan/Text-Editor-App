@@ -7,19 +7,14 @@ import javafx.scene.layout.AnchorPane;
 public class AboutController {
 
 
-    public AnchorPane root;
     public ImageView imgRoot;
+    public AnchorPane rootAbout;
 
-    public void rootOnMouseClicked(MouseEvent mouseEvent) {
-    }
-
-    public void rootOnMouseMoved(MouseEvent mouseEvent) {
-
-
-    }
 
     public void rootOnMouseDragged(MouseEvent mouseEvent) {
-        imgRoot.setLayoutX(mouseEvent.getX()-imgRoot.getFitWidth()/2);
-        imgRoot.setLayoutY(mouseEvent.getY()-imgRoot.getFitWidth()/2);
+        rootAbout.setLayoutX(mouseEvent.getX()-rootAbout.getWidth()/2);
+        rootAbout.setLayoutY(mouseEvent.getY()-rootAbout.getHeight()/2);
+
+
     }
 }

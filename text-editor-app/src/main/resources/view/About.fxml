@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
@@ -8,30 +9,32 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="root" onMouseClicked="#rootOnMouseClicked" onMouseDragged="#rootOnMouseDragged" onMouseMoved="#rootOnMouseMoved" prefHeight="668.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.AboutController">
+<AnchorPane fx:id="rootAbout" onMouseClicked="#rootOnMouseClicked" onMouseDragged="#rootOnMouseDragged" onMouseMoved="#rootOnMouseMoved" prefHeight="401.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.AboutController">
    <children>
-      <ImageView fx:id="imgRoot" fitHeight="568.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgRoot" fitHeight="415.0" fitWidth="523.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assert.image/onecolor.png" />
          </image>
       </ImageView>
-      <TextArea editable="false" layoutX="-4.0" layoutY="80.0" prefHeight="310.0" prefWidth="500.0" text="IntelliJ IDEA 2023.1.4 (Ultimate Edition)&#10;Build #IU-231.9225.16, built on July 12, 2023&#10;Licensed to Tharindu Ishan&#10;Subscription is active until September 7, 2023.&#10;Evaluation purpose only.&#10;Runtime version: 17.0.7+10-b829.16 amd64&#10;VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.&#10;Linux 6.2.0-26-generic&#10;GC: G1 Young Generation, G1 Old Generation&#10;Memory: 976M&#10;Cores: 8&#10;Registry:&#10;    debugger.new.tool.window.layout=true&#10;    ide.experimental.ui=true&#10;&#10;&#10;Kotlin: 231-1.8.21-IJ9225.16&#10;Current Desktop: ubuntu:GNOME" AnchorPane.bottomAnchor="278.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="84.0" />
-      <HBox layoutX="67.0" layoutY="14.0" prefHeight="67.0" prefWidth="317.0">
+      <TextArea editable="false" layoutX="33.0" layoutY="85.0" prefHeight="299.0" prefWidth="480.0" text="&#10;Build #IU-231.9225.16, built on August 22, 2023&#10;Licensed to Tharindu Ishan&#10;Subscription is active until September 7, 2025.&#10;Evaluation purpose only.&#10;Runtime version: 17.0.7+10-b829.16 amd64&#10;VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.&#10;Linux 6.2.0-26-generic&#10;GC: G1 Young Generation, G1 Old Generation&#10;Memory: 976M&#10;Cores: 8&#10;Registry:&#10;    debugger.new.tool.window.layout=true&#10;    ide.experimental.ui=true&#10;&#10;Kotlin: 231-1.8.21-IJ9225.16&#10;Current Desktop: ubuntu:GNOME" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="62.0" />
+      <HBox layoutX="39.0" layoutY="14.0" prefHeight="67.0" prefWidth="425.0" spacing="20.0">
          <children>
             <ImageView fitHeight="61.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assert.image/About.png" />
                </image>
             </ImageView>
-            <Label text="IntelliJ IDEA 2023.1.4 (Ultimate Edition)">
+            <Label text="Text Editor 2023.1.4 (Ultimate Edition)">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
             </Label>
          </children>
       </HBox>
-      <ImageView fitHeight="197.0" fitWidth="85.0" layoutX="454.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="197.0" fitWidth="85.0" layoutX="483.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assert.image/About%20Transparent.png" />
          </image>

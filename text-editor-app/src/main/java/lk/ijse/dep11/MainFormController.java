@@ -8,11 +8,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.web.HTMLEditor;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class MainFormController {
 
@@ -21,6 +26,8 @@ public class MainFormController {
     public MenuItem btnClose;
     public MenuItem btnUserGuide;
     public MenuItem btnAbout;
+    public MenuItem btnOpen;
+    public AnchorPane root;
 
     public void btnNewOnAction(ActionEvent actionEvent) {
         htmlEditor.setHtmlText("");
@@ -53,5 +60,15 @@ public class MainFormController {
 
         stage.centerOnScreen();
         stage.show();
+    }
+
+    public void btnOpenOnAction(ActionEvent actionEvent) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("/"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text File","*.txt"));
+        File txtFile = fileChooser.showOpenDialog(root.getScene().getWindow());
+        Path path = Paths.get(txtFile.toURI());
+        String text = Files.readString(path);
+        htmlEditor.setHtmlText(text);
     }
 }

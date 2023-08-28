@@ -99,16 +99,26 @@ public class MainFormController {
             selectedFile = fileChooser.showSaveDialog(root.getScene().getWindow());
 
         }
-        String filePath = selectedFile.getAbsolutePath();
-        String textToWrite = htmlEditor.getHtmlText();
-            if (!filePath.isEmpty() && !textToWrite.isEmpty()) {
-                try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-                    writer.write(textToWrite);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-
-
+        save();
     }
-}
+    public void btnSaveAsOnAction(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("/"));
+        selectedFile = fileChooser.showSaveDialog(root.getScene().getWindow());
+        save();
+    }
+    public void save(){
+        String textToWrite = htmlEditor.getHtmlText();
+        if (selectedFile!=null && !textToWrite.isEmpty()) {
+            String filePath = selectedFile.getAbsolutePath();
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+                writer.write(textToWrite);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+    }
+
+

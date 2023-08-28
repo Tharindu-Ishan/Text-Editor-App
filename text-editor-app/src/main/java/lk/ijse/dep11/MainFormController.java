@@ -3,6 +3,8 @@ package lk.ijse.dep11;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -13,11 +15,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Optional;
 
 public class MainFormController {
 
@@ -28,12 +33,26 @@ public class MainFormController {
     public MenuItem btnAbout;
     public MenuItem btnOpen;
     public AnchorPane root;
+    File selectedFile;
 
-    public void btnNewOnAction(ActionEvent actionEvent) {
-        htmlEditor.setHtmlText("");
+    public void btnNewOnAction(ActionEvent actionEvent) throws IOException {
+
+        AnchorPane root= FXMLLoader.load(StartController.class.getResource("/view/MainForm.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Text Editor");
+        stage.centerOnScreen();
+        stage.show();
+        stage.setOnCloseRequest(windowEvent -> {
+            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure want to exit?", ButtonType.YES, ButtonType.NO).showAndWait();
+            if(buttonType.get()==ButtonType.NO) windowEvent.consume();
+        });
     }
     public void btnCloseOnAction(ActionEvent actionEvent) {
-        System.exit(0);
+        Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure want to exit?", ButtonType.YES, ButtonType.NO).showAndWait();
+        if(buttonType.get()==ButtonType.YES) System.exit(0);
+
     }
 
     public void btnUserGuideOnAction(ActionEvent actionEvent) throws IOException {
@@ -70,5 +89,26 @@ public class MainFormController {
         Path path = Paths.get(txtFile.toURI());
         String text = Files.readString(path);
         htmlEditor.setHtmlText(text);
+    }
+
+    public void btnSaveOnAction(ActionEvent actionEvent) {
+
+        if(selectedFile==null) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(new File("/"));
+            selectedFile = fileChooser.showSaveDialog(root.getScene().getWindow());
+
+        }
+        String filePath = selectedFile.getAbsolutePath();
+        String textToWrite = htmlEditor.getHtmlText();
+            if (!filePath.isEmpty() && !textToWrite.isEmpty()) {
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+                    writer.write(textToWrite);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+
     }
 }

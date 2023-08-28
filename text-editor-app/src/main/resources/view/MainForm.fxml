@@ -22,7 +22,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Cut" />
+              <MenuItem fx:id="btnCut" mnemonicParsing="false" onAction="#btnCutOnAction" text="Cut" />
                   <MenuItem fx:id="btnCopy" mnemonicParsing="false" onAction="#btnCopyOnAction" text="Copy" />
                   <MenuItem mnemonicParsing="false" text="Paste" />
                   <MenuItem mnemonicParsing="false" text="Select All" />

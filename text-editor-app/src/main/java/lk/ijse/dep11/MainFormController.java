@@ -62,7 +62,12 @@ public class MainFormController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(scene);
+        stage.setScene(scene);String htmlText = htmlEditor.getHtmlText();
+        // Create a ClipboardContent object
+        ClipboardContent content = new ClipboardContent();
+        content.putHtml(htmlText);
+        // Set the content to the clipboard
+        Clipboard.getSystemClipboard().setContent(content);
         stage.setTitle("User Guide");
         stage.centerOnScreen();
         stage.show();
@@ -124,6 +129,17 @@ public class MainFormController {
     public void btnCopyOnAction(ActionEvent actionEvent) {
 
         String htmlText = htmlEditor.getHtmlText();
+        // Create a ClipboardContent object
+        ClipboardContent content = new ClipboardContent();
+        content.putHtml(htmlText);
+        // Set the content to the clipboard
+        Clipboard.getSystemClipboard().setContent(content);
+    }
+
+    public void btnCutOnAction(ActionEvent actionEvent) {
+        String htmlText = htmlEditor.getHtmlText();
+        htmlEditor.setHtmlText("");
+        
         // Create a ClipboardContent object
         ClipboardContent content = new ClipboardContent();
         content.putHtml(htmlText);

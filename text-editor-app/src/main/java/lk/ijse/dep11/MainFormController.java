@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
@@ -90,7 +92,6 @@ public class MainFormController {
         String text = Files.readString(path);
         htmlEditor.setHtmlText(text);
     }
-
     public void btnSaveOnAction(ActionEvent actionEvent) {
 
         if(selectedFile==null) {
@@ -119,6 +120,16 @@ public class MainFormController {
             }
         }
     }
+
+    public void btnCopyOnAction(ActionEvent actionEvent) {
+
+        String htmlText = htmlEditor.getHtmlText();
+        // Create a ClipboardContent object
+        ClipboardContent content = new ClipboardContent();
+        content.putHtml(htmlText);
+        // Set the content to the clipboard
+        Clipboard.getSystemClipboard().setContent(content);
     }
+}
 
 

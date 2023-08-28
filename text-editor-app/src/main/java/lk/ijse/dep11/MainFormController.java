@@ -139,12 +139,21 @@ public class MainFormController {
     public void btnCutOnAction(ActionEvent actionEvent) {
         String htmlText = htmlEditor.getHtmlText();
         htmlEditor.setHtmlText("");
-        
+
         // Create a ClipboardContent object
         ClipboardContent content = new ClipboardContent();
         content.putHtml(htmlText);
         // Set the content to the clipboard
         Clipboard.getSystemClipboard().setContent(content);
+    }
+
+    public void btnPasteOnAction(ActionEvent actionEvent) {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        if (clipboard.hasString()) {
+            String plainText = clipboard.getString();
+            String htmlText = "<p>" + plainText + "</p>";
+            htmlEditor.setHtmlText(htmlText);
+        }
     }
 }
 

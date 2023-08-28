@@ -155,6 +155,10 @@ public class MainFormController {
             htmlEditor.setHtmlText(htmlText);
         }
     }
+
+    public void btnSelectAllOnAction(ActionEvent actionEvent) {
+
+    }
 }
 
 

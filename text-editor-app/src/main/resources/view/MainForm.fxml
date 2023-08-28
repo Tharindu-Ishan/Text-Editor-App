@@ -25,7 +25,7 @@
               <MenuItem fx:id="btnCut" mnemonicParsing="false" onAction="#btnCutOnAction" text="Cut" />
                   <MenuItem fx:id="btnCopy" mnemonicParsing="false" onAction="#btnCopyOnAction" text="Copy" />
                   <MenuItem fx:id="btnPaste" mnemonicParsing="false" onAction="#btnPasteOnAction" text="Paste" />
-                  <MenuItem mnemonicParsing="false" text="Select All" />
+                  <MenuItem fx:id="btnSelectAll" mnemonicParsing="false" onAction="#btnSelectAllOnAction" text="Select All" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

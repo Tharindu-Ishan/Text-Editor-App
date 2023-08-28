@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="rootAbout" onMouseClicked="#rootOnMouseClicked" onMouseDragged="#rootOnMouseDragged" onMouseMoved="#rootOnMouseMoved" prefHeight="401.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.AboutController">
    <children>
-      <ImageView fx:id="imgRoot" fitHeight="415.0" fitWidth="523.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgRoot" fitHeight="415.0" fitWidth="523.0" layoutX="14.0" layoutY="5.0" onMouseClicked="#imgRootOnMouseClicked" onMouseDragged="#imgRootOnMouseDragged" onMousePressed="#imgRootOnMousePressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assert.image/onecolor.png" />
          </image>

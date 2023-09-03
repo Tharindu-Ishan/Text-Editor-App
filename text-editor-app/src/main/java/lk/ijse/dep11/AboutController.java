@@ -39,7 +39,7 @@ public class AboutController {
         Stage stage=(Stage)rootAbout.getScene().getWindow();
         stage.setX(mouseEvent.getScreenX()-x);
         stage.setY(mouseEvent.getScreenY()-y);
-        
+
     }
 
     public void imgRootOnMousePressed(MouseEvent mouseEvent) {

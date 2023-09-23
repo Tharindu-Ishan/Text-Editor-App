@@ -6,12 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.web.HTMLEditor;
+import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -25,7 +27,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Optional;
-
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.HTMLEditor;
 public class MainFormController {
 
     public MenuItem btnNew;
@@ -35,7 +38,9 @@ public class MainFormController {
     public MenuItem btnAbout;
     public MenuItem btnOpen;
     public AnchorPane root;
+    public TextField txtSearch;
     File selectedFile;
+
 
     public void btnNewOnAction(ActionEvent actionEvent) throws IOException {
 
@@ -114,7 +119,9 @@ public class MainFormController {
         save();
     }
     public void save(){
-        String textToWrite = htmlEditor.getHtmlText();
+        int n1 = htmlEditor.getHtmlText().substring(102).length()-25;
+        String textToWrite=htmlEditor.getHtmlText().substring(102).substring(0,n1);
+        System.out.println(textToWrite);
         if (selectedFile!=null && !textToWrite.isEmpty()) {
             String filePath = selectedFile.getAbsolutePath();
 
@@ -157,6 +164,14 @@ public class MainFormController {
     }
 
     public void btnSelectAllOnAction(ActionEvent actionEvent) {
+
+
+
+
+    }
+
+    public void txtSearchOnAction(ActionEvent actionEvent) {
+
 
     }
 }
